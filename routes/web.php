@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PodcastController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+// Route::get('/job/dispatch', 'PodcastController@index');
+Route::get('/job/dispatch',  [PodcastController::class, 'index']);
+Route::get('/job/dispatch/store',  [PodcastController::class, 'store']);
